@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex_Practice</title>
+<style>
+    *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    .parent{
+        border: 2px solid red;
+        height: 800px;
+        display: flex;
+        flex-direction: row;
+        /* row is default*
+        when colomn treat main and cross axis as reverse*/
+
+        justify-content: space-between; /* Main Axis only use when direction is row
+        space-around will be used to give space around the div's
+        space-evenly will be used to space the div's evenly
+        space-between the the div's don't leave any space on the left and right margin*/
+
+        align-items: center; /* Cross Axis only use when direction is row*/
+
+        flex-wrap: wrap;/* wrap will wrap the div's in the next line
+        wrap-reverse reverses the order*/
+
+        align-content: space-evenly /* Cross Axis only use when direction is row
+        evenly is used to space when wrapped evenly*/
+    }
+    .Box{
+        border: 2px solid blue;
+        height: 100px;
+        width: 100px;
+        background-color: rgb(222, 220, 245);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #Box-1{
+        order: 1; /* order is used to change the order of the div's
+        works on the child*/
+     /* grow the div's */
+        flex-shrink: 2;
+    }
+    #Box-4{
+        order: 2;
+        flex-grow: 2;
+        align-self: flex-start;
+    }
+</style>
+</head>
+<body>
+    <div class="parent">
+        <div class="Box" id="Box-1"> Box-1 </div>
+        <div class="Box" id="Box-2">Box-2</div>
+        <div class="Box" id="Box-3">Box-3</div>
+        <div class="Box" id="Box-4">Box-4</div>
+        <div class="Box" id="Box-5">Box-5</div>
+        <div class="Box" id="Box-6">Box-6</div>
+    </div>
+</body>
+</html>
